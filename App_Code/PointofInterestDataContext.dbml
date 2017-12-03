@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PointofInterest" Class="PointofInterestDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SAV\SQLEXPRESS;Initial Catalog=PointofInterest;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PointofInterestConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_select_SpotsOpeningHoursLocationbyName" Method="sp_select_SpotsOpeningHoursLocationbyName">
+    <Parameter Name="spotname" Type="System.String" DbType="VarChar(60)" />
+    <ElementType Name="sp_select_SpotsOpeningHoursLocationbyNameResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="websitelink" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="picturesdir" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="openinghrsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="location_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="totalseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservedseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="availableseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approval" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="typeofspot" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="approval1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mondayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="tuesdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="wednesdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="thursdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fridayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="saturdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="sundayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Lot" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_select_AllLocationSpots" Method="sp_select_AllLocationSpots">
+    <ElementType Name="sp_select_AllLocationSpotsResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="websitelink" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="picturesdir" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="openinghrsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="location_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="totalseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservedseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="availableseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approval" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="typeofspot" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="approval1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Lot" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_select_SpotsOpeningHoursLocationbyNameParish" Method="sp_select_SpotsOpeningHoursLocationbyNameParish">
+    <Parameter Name="typeofspot" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="parish" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_select_SpotsOpeningHoursLocationbyNameParishResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="websitelink" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="picturesdir" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="openinghrsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="location_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descriptions" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="totalseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservedseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="availableseating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approval" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="typeofspot" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="approval1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mondayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="tuesdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="wednesdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="thursdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fridayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="saturdayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="sundayhr" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Lot" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_select_AllUsers" Method="sp_select_AllUsers">
+    <ElementType Name="sp_select_AllUsersResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="password1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="address1" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="roles" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_insert_User" Method="sp_insert_User">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="password1" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="lname" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="gender" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="address1" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="telephone" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="roles" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

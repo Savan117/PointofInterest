@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="~/bootstrap/js/bootstrap.min.js" rel="stylesheet"/>
+    <link href="~/bootstrap/js/bootstrap.js" rel="stylesheet"/>
+  
+    <style>
+        li {
+            font-size:18px;
+        }
+
+        footer {
+	        background: #333;
+	        color: #eee;
+	        font-size: 11px;
+	        padding: 0px;
+            width:100%;
+            height:250px;
+            bottom:0px;
+        }
+    </style>
+</head>
+<body style="background: url('images/background/bgimg2.jpg'); font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;">
+    <form runat="server">
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-inverse navbar-static-top" style="height:40px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" >
+                        <li class="navbar-brand"><img src="images/background/POI_logo.jpg" width="100" height="30" /></li>
+                        <li ><a href="Home.aspx">Home</a></li>
+                        <li ><a href="SearchbyCategory.aspx">View Spots</a></li>
+                        <li ><a href="SearchbyMap.aspx">View Map</a></li>
+                       <!-- <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="SearchByCategory.apsx">By Category</a></li>
+                            <li><a href="About.apsx">By Mapy</a></li>
+                          </ul> 
+                        </li>-->
+                        <li><a href="About.aspx">About</a></li>
+                        <li><a href="Contact.aspx">Contact</a></li>
+                      
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ><a href="Login.aspx">
+                            <asp:Label ID="loginLbl" runat="server" Text="Login"></asp:Label></a></li>
+                        <li>
+                            <asp:Button ID="logoutBtn" runat="server" Text="Logout" CssClass="btn btn-primary" Visible="false" OnClick="logoutBtn_Click"/></li>
+                        <li ><a href="Register.aspx">
+                            <asp:Label ID="registerLbl" runat="server" Text="Register"></asp:Label></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+    </asp:ContentPlaceHolder>
+
+    <footer >
+		<div >
+			<div class="row">
+				<div class="col-sm-2">
+				<h6>Copyright &copy; 2015 Savan Scott</h6>
+				</div><!-- end col-sm-2 -->
+					
+				<div class="col-sm-2">
+					<h6>Contact Us</h6>
+					<p>3481 Melrose Place
+                        <br/>Beverly Hills, CA 90210</p>
+                     <p><i class="fa fa-phone fa-fw"></i> (123) 456-7890</p>
+                     <p><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a></p>         
+				</div><!-- end col-sm-2 -->
+					
+				<div class="col-sm-2">
+					<h6>Navigation</h6>
+					<ul class="unstyled">
+						<li><a href="Home.aspx">Home</a></li>
+						<li><a href="About.aspx">About Us</a></li>
+						<li><a href="Contact.aspx">Contact Us</a></li>
+						<li><a href="SpotContent.aspx">View Spots</a></li>
+					</ul>
+				</div><!-- end col-sm-2 -->
+					
+				<div class="col-sm-2">
+					<h6>Coded <span class="glyphicon glyphicon-heart"></span> by MPteam</h6>
+				</div><!-- end col-sm-2 -->
+			</div><!-- end row -->
+		</div><!-- end container -->
+    <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+	</footer>
+        <!-- jQuery -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script>
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Scrolls to the selected menu item on the page
+        $(function () {
+            $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+        //#to-top button appears after scrolling
+        var fixed = false;
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                    // $('#to-top').css({position:'fixed', display:'block'});
+                    $('#to-top').show("slow", function () {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            } else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function () {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
+                }
+            }
+        });
+        // Disable Google Maps scrolling
+        // See http://stackoverflow.com/a/25904582/1607849
+        // Disable scroll zooming and bind back the click event
+        var onMapMouseleaveHandler = function (event) {
+            var that = $(this);
+            that.on('click', onMapClickHandler);
+            that.off('mouseleave', onMapMouseleaveHandler);
+            that.find('iframe').css("pointer-events", "none");
+        }
+        var onMapClickHandler = function (event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+        $('.map').on('click', onMapClickHandler);
+    </script>
+    </form>
+</body>
+</html>
